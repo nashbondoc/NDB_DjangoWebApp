@@ -9,6 +9,12 @@
 
     <h1>Student Dashboard</h1>
 
+    <!-- Logout Button -->
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+
     <h2>Total Students</h2>
     <p>{{ total_students }}</p>
 
