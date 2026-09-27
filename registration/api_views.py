@@ -20,9 +20,16 @@ def student_api(request):
                 "student_name": student.student_name,
                 "program": student.program,
                 "year_level": student.year_level,
+                "email": student.email,
             })
 
-        return JsonResponse(data, safe=False, status=200)
+        return JsonResponse(
+            {
+                "count": len(data),
+                "students": data
+            },
+            status=200
+        )
 
     return JsonResponse(
         {"detail": "Method not allowed."},
